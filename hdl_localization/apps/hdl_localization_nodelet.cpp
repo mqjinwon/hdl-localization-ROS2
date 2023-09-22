@@ -121,9 +121,10 @@ private:
         ndt->setNeighborhoodSearchMethod(pclomp::KDTREE);
       }
       return ndt;
-    } else if(reg_method.find("NDT_CUDA") != std::string::npos) {
+    } 
+    else if(reg_method.find("NDT_CUDA") != std::string::npos) {
       RCLCPP_INFO(get_logger(), "NDT_CUDA is selected");
-      boost::shared_ptr<fast_gicp::NDTCuda<PointT, PointT>> ndt(new fast_gicp::NDTCuda<PointT, PointT>);
+      std::shared_ptr<fast_gicp::NDTCuda<PointT, PointT>> ndt(new fast_gicp::NDTCuda<PointT, PointT>);
       ndt->setResolution(ndt_resolution);
 
       if(reg_method.find("D2D") != std::string::npos) {
@@ -154,7 +155,7 @@ private:
   void initialize_params() {
     // intialize scan matching method
     double downsample_resolution = declare_parameter<double>("downsample_resolution", 0.1);
-    boost::shared_ptr<pcl::VoxelGrid<PointT>> voxelgrid(new pcl::VoxelGrid<PointT>());
+    std::shared_ptr<pcl::VoxelGrid<PointT>> voxelgrid(new pcl::VoxelGrid<PointT>());
     voxelgrid->setLeafSize(downsample_resolution, downsample_resolution, downsample_resolution);
     downsample_filter = voxelgrid;
 
@@ -301,12 +302,12 @@ private:
    * @param points_msg
    */
   void globalmap_callback(const sensor_msgs::msg::PointCloud2::ConstSharedPtr points_msg) {
-    RCLCPP_INFO(get_logger(), "");
-    RCLCPP_INFO(get_logger(), "globalmap received!");
-    RCLCPP_INFO(get_logger(), "");
+    // RCLCPP_INFO(get_logger(), "");
+    RCLCPP_INFO(get_logger(), "\nglobalmap received!\n");
+    // RCLCPP_INFO(get_logger(), "");
 
     pcl::PointCloud<PointT>::Ptr cloud(new pcl::PointCloud<PointT>());
-    // pcl::PointCloud<PointT>::Ptr cloud = boost::make_shared<pcl::PointCloud<PointT>>();
+    // pcl::PointCloud<PointT>::Ptr cloud = std::make_shared<pcl::PointCloud<PointT>>();
     pcl::fromROSMsg(*points_msg, *cloud);
     globalmap = cloud;
 

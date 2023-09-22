@@ -30,8 +30,8 @@ public:
   using Ptr = pcl::shared_ptr<FastGICPSingleThread<PointSource, PointTarget>>;
   using ConstPtr = pcl::shared_ptr<const FastGICPSingleThread<PointSource, PointTarget>>;
 #else
-  using Ptr = boost::shared_ptr<FastGICPSingleThread<PointSource, PointTarget>>;
-  using ConstPtr = boost::shared_ptr<const FastGICPSingleThread<PointSource, PointTarget>>;
+  using Ptr = std::shared_ptr<FastGICPSingleThread<PointSource, PointTarget>>;
+  using ConstPtr = std::shared_ptr<const FastGICPSingleThread<PointSource, PointTarget>>;
 #endif
 
 protected:

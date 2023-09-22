@@ -36,8 +36,8 @@ public:
   using Ptr = pcl::shared_ptr<NDTCuda<PointSource, PointTarget>>;
   using ConstPtr = pcl::shared_ptr<const NDTCuda<PointSource, PointTarget>>;
 #else
-  using Ptr = boost::shared_ptr<NDTCuda<PointSource, PointTarget>>;
-  using ConstPtr = boost::shared_ptr<const NDTCuda<PointSource, PointTarget>>;
+  using Ptr = std::shared_ptr<NDTCuda<PointSource, PointTarget>>;
+  using ConstPtr = std::shared_ptr<const NDTCuda<PointSource, PointTarget>>;
 #endif
 
 protected:

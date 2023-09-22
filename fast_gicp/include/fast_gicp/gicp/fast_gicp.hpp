@@ -34,8 +34,8 @@ public:
   using Ptr = pcl::shared_ptr<FastGICP<PointSource, PointTarget>>;
   using ConstPtr = pcl::shared_ptr<const FastGICP<PointSource, PointTarget>>;
 #else
-  using Ptr = boost::shared_ptr<FastGICP<PointSource, PointTarget>>;
-  using ConstPtr = boost::shared_ptr<const FastGICP<PointSource, PointTarget>>;
+  using Ptr = std::shared_ptr<FastGICP<PointSource, PointTarget>>;
+  using ConstPtr = std::shared_ptr<const FastGICP<PointSource, PointTarget>>;
 #endif
 
 protected:
