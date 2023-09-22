@@ -3,7 +3,7 @@
 set -e
 
 # Ros build
-source "/opt/ros/foxy/setup.bash"
+source "/opt/ros/humble/setup.bash"
 
 echo "==============HDL localization ROS2 Docker Env Ready================"
 

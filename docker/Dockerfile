@@ -1,12 +1,12 @@
 # Author: TaeYoung Kim
 # email: tyoung96@yonsei.ac.kr
 
-FROM osrf/ros:foxy-desktop
+FROM osrf/ros:humble-desktop
 
 # Install PCL & Eigen & essential libraries
 RUN apt-get update && apt-get install -y cmake libatlas-base-dev libeigen3-dev libpcl-dev libgoogle-glog-dev libsuitesparse-dev libglew-dev wget unzip
-RUN apt-get install -y ros-foxy-cv-bridge ros-foxy-pcl-conversions ros-foxy-xacro ros-foxy-robot-state-publisher \
-    ros-foxy-image-transport ros-foxy-image-transport-plugins ros-foxy-pcl-ros libpcap-dev
+RUN apt-get install -y ros-humble-cv-bridge ros-humble-pcl-conversions ros-humble-xacro ros-humble-robot-state-publisher \
+    ros-humble-image-transport ros-humble-image-transport-plugins ros-humble-pcl-ros libpcap-dev
 
 WORKDIR /root/workspace
 
