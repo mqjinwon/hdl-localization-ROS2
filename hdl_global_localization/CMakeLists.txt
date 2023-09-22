@@ -4,9 +4,11 @@ project(hdl_global_localization)
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclcpp_components REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(pcl_ros REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
 find_package(OpenCV REQUIRED)
@@ -46,6 +48,8 @@ add_library(${PROJECT_NAME}_lib SHARED
 )
 ament_target_dependencies(${PROJECT_NAME}_lib
   rclcpp
+  rclcpp_components
+  nav_msgs
   pcl_ros
   geometry_msgs
 )
@@ -58,6 +62,7 @@ target_include_directories(
   ${OpenCV_INCLUDE_DIRS}
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
+  nav_msgs
 )
 target_link_libraries(${PROJECT_NAME}_lib
   ${OpenCV_LIBS}

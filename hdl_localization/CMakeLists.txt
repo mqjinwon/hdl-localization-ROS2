@@ -9,6 +9,7 @@ cmake_policy(SET CMP0074 NEW)
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclcpp_components REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(tf2_eigen REQUIRED)
@@ -16,6 +17,7 @@ find_package(pcl_ros REQUIRED)
 find_package(pcl_conversions REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 # find_package(pclomp REQUIRED)
@@ -61,6 +63,8 @@ add_library(${PROJECT_NAME}_lib SHARED
 )
 ament_target_dependencies(${PROJECT_NAME}_lib
   rclcpp
+  rclcpp_components
+  std_srvs
   tf2_ros
   tf2_geometry_msgs
   tf2_eigen
