@@ -82,7 +82,7 @@ If you have successfully created the docker container, the terminal output will 
 
 ```
 ================HDL localization ROS2 Docker Env Ready================
-root@taeyoung-cilab:/root/workspace#
+root@jin:/root/workspace#
 ```
 
 ## 3. Make custom HDL-Localization-ROS2 launch file
@@ -117,7 +117,7 @@ source /opt/ros/humble/setup.bash
 ```
 
 ```
-root@taeyoung-cilab:~/workspace#
+root@jin:~/workspace#
 ```
 
 All should stay on the above path.
@@ -159,7 +159,7 @@ ros2 bag play src/hdl_localization/sample-bag/subset/
 
 We based ours on the following packages.  
 This repository just provides a detailed guide to using docker to reduce dependencies.
-
+-   [Taeyoung96](https://github.com/Taeyoung96)
 -   [DataspeedInc/hdl_localization](https://github.com/DataspeedInc/hdl_localization/tree/ros2)
 -   [DataspeedInc/hdl_global_localization](https://github.com/DataspeedInc/hdl_global_localization/tree/ros2)
 -   [DataspeedInc/fast_gicp](https://github.com/DataspeedInc/fast_gicp/tree/ros2)
